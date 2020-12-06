@@ -79,16 +79,6 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-loss = history.history['loss']
-val_loss = history.history['val_loss']
-epochs = range(1, len(loss) + 1)
-plt.plot(epochs, loss, 'y', label='Training loss')
-plt.plot(epochs, val_loss, 'r', label='Validation loss')
-plt.title('Training and validation loss')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-plt.show()
 
 print("Time duartion for training = {:.2f} seconds".format(t1))
 
@@ -104,40 +94,4 @@ plt.tick_params(axis='x', which='major', labelsize=12, rotation=45)
 plt.tick_params(axis='y', which='major', labelsize=12, rotation=0)
 
 class_accuracies = cm.diagonal()
-# np.save('./data/cnn_class_accuracies',class_accuracies)
-
-
-# In[7]:
-
-
-# %% [code]
-from pylab import rcParams
-rcParams['figure.figsize'] = 10, 4
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
-# summarize history for loss
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
-
-# %% [code]
-y_pred=model.predict(X_test)
-
-# %% [code]
-y_test_class=np.argmax(y_test,axis=1)
-y_pred_class=np.argmax(y_pred,axis=1)
-
-# %% [code]
-from sklearn.metrics import confusion_matrix,accuracy_score
-cm=confusion_matrix(y_test_class,y_pred_class)
-accuracy=accuracy_score(y_test_class,y_pred_class)
-
+np.save('./data/cnn_class_accuracies',class_accuracies)
