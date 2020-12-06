@@ -4,9 +4,9 @@
 # In[ ]:
 
 
-from google.colab import drive
-drive.mount('/content/gdrive')
-get_ipython().system('ln -s /content/gdrive/My\\ Drive/Acadamics/CS725/Project/data ./data')
+#from google.colab import drive
+#drive.mount('/content/gdrive')
+#get_ipython().system('ln -s /content/gdrive/My\\ Drive/Acadamics/CS725/Project/data ./data')
 
 
 # In[ ]:
